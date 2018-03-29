@@ -18,11 +18,13 @@ The seraphcore Project is a decentralized peer-to-peer banking financial platfor
 |:-----------|:-----------|
 | Block Size | `4MB` |
 | Block Time | `120s` |
-| PoW Reward | `50 SERA` |
+| PoW Reward | `50 SERA` |*
 | Masternode Requirement | `5,000 SERA` |
 | Port | `25676` |
 | RPC Port | `25674` |
 | Masternode Port | `25676` |
+
+*Instamine Protection: to prevent instamine, the first 500 blocks reward will be 2 SERA , from block 501 to 1500 block reward will be 3, and from block 1501-infinite , block reward will be 50. Expected time to reach block 1501: 48 hours
 
 
 Build Seraph Wallet
