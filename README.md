@@ -1,12 +1,5 @@
 ![Seraph Logo](https://seraph.io/images/logo_at_readme.jpg)
 
-"Valuable secure Privacy cryptocurrency"
-
-[![Build Status](https://travis-ci.org/seraph/seraph.svg?branch=master)](https://travis-ci.org/seraph/seraph)
-<a href="https://discord.gg/uDmpSHx"><img src="https://discordapp.com/api/guilds/398369914760593419/embed.png" alt="Discord server" /></a>
-
-
-| [Website](https://seraph.io) |[Block Explorer](https://explorer.seraph.io/) |
 
 Features
 =============
@@ -22,27 +15,13 @@ The seraphcore Project is a decentralized peer-to-peer banking financial platfor
 
 | Specification | Value |
 |:-----------|:-----------|
-| Total Blocks | `8,409,600` |
 | Block Size | `4MB` |
 | Block Time | `120s` |
-| PoW Reward | `30 SERA` |
+| PoW Reward | `50 SERA` |
 | Masternode Requirement | `5,000 SERA` |
-| Masternode Reward | `15 SERA First Year` - `20 SERA Second Year` |
 | Port | `25676` |
 | RPC Port | `25674` |
 | Masternode Port | `25676` |
-
-
-
-
-| Year | PoW Reward | MN Reward |
-|:-----------|:-----------|:-----------|
-| 1 | `30 SERA` | `15 SERA` |
-| 2 | `20 SERA` | `20 SERA` |
-| 3 | `10 SERA` | `15 SERA` |
-| 4 | `5 SERA` | `10 SERA` |
-| 5 | `2.5 SERA` | `7.5 SERA` |
-
 
 
 Build Seraph Wallet
