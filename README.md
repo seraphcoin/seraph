@@ -1,4 +1,5 @@
-![Seraph Logo](https://seraph.io/images/logo_at_readme.jpg)
+<a href="http://www.freeimagehosting.net/commercial-photography/"><img src="https://i.imgur.com/dx2eE9y.png" alt="Commercial Photography"></a>
+
 
 
 Features
