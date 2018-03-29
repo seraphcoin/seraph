@@ -1,0 +1,26 @@
+# /etc/conf.d/seraphd: config file for /etc/init.d/seraphd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/seraph/seraph.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/seraphd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/seraphd.pid"
+
+# Where to write seraphd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/seraphd"
+
+# User and group to own seraphd process
+#BITCOIND_USER="seraph"
+#BITCOIND_GROUP="seraph"
+
+# Path to seraphd executable
+#BITCOIND_BIN="/usr/bin/seraphd"
+
+# Nice value to run seraphd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

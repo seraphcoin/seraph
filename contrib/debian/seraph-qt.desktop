@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Seraph
+Comment=Seraph P2P Cryptocurrency
+Comment[fr]=Seraph, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Seraph, eşten eşe kriptografik sanal para birimi
+Exec=seraph-qt %u
+Terminal=false
+Type=Application
+Icon=seraph128
+MimeType=x-scheme-handler/seraph;
+Categories=Office;Finance;
