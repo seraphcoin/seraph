@@ -26,32 +26,6 @@ struct SeedSpec6 {
 
 #include "chainparamsseeds.h"
 
-
-void MineGenesis(CBlock genesis){
-    // This will figure out a valid hash and Nonce if you're creating a different genesis block:
-   uint256 newhash = genesis.GetHash();
-    uint256 besthash;
-    int64_t nStart = GetTime();
-    uint256 hashTarget = ~uint256(0) >> 20;
-    printf("Target: %s\n", hashTarget.GetHex().c_str());
-    memset(&besthash,0xFF,32);
-    while (newhash > hashTarget) {
-        ++genesis.nNonce;
-        if (genesis.nNonce == 0){
-            printf("NONCE WRAPPED, incrementing time");
-           ++genesis.nTime;
-       }
-        newhash = genesis.GetHash();
-        if(newhash < besthash){
-           besthash=newhash;
-            printf("New best: %s\n", newhash.GetHex().c_str());
-        }
-    }
-    printf("Found Genesis, Nonce: %ld \nHash: %s\n", genesis.nNonce, genesis.GetHash().GetHex().c_str());
-    printf("Genesis Hash Merkle: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-}
-
-
 /**
  * Main network
  */
