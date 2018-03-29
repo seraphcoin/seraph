@@ -51,7 +51,7 @@ Note that for WSL the seraph Core source path MUST be somewhere in the default m
 The next three steps are an example of how to acquire the source in an appropriate way.
 
     cd /usr/src
-    sudo git clone https://github.com/seraph/seraph.git
+    sudo git clone https://github.com/seraphcoin/seraph.git
     sudo chmod -R a+rw seraph
     
 Once the source code is ready the build steps are below.
@@ -76,7 +76,7 @@ Once the source code is ready the build steps are below.
     # If you want to build the Qt GUI:
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
-    git clone https://github.com/seraph/seraph --recursive
+    git clone https://github.com/seraphcoin/seraph.git --recursive
     
     cd seraph
 
@@ -110,7 +110,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 1. Clone the seraph source code and cd into `seraph`
 
-        git clone --recursive https://github.com/seraph/seraph.git
+        git clone --recursive https://github.com/seraphcoin/seraph.git
         cd seraph
 
 2.  Build Seraph Core:
