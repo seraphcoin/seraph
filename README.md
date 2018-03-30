@@ -10,7 +10,7 @@ Features
 * MN Reward
 
 
-The seraphcore Project is a decentralized peer-to-peer banking financial platform, created under an open source license, featuring a built-in cryptocurrency, end-to-end encrypted messaging and decentralized marketplace. The decentralized network aims to provide anonymity and privacy for everyone through a simple user-friendly interface by taking care of all the advanced cryptography in the background.
+The seraph coin is a decentralized peer-to-peer banking financial platform, created under an open source license, featuring a built-in cryptocurrency, end-to-end encrypted messaging and decentralized marketplace. The decentralized network aims to provide anonymity and privacy for everyone through a simple user-friendly interface by taking care of all the advanced cryptography in the background.
 
 ## Coin Specifications
 
@@ -85,7 +85,7 @@ Once the source code is ready the build steps are below.
     # Note autogen will prompt to install some more dependencies if needed
     ./autogen.sh
     ./configure 
-    make -j4
+    make
 
 ### Build on OSX
 
