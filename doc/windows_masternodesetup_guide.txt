@@ -7,7 +7,7 @@ MASTERNODE GUIDE FOR WINDOWS
 5.In the Console window enter getaccountaddress 0 and copy the result. This is your MASTERNODE DEPOSIT ADDRESS, where you will deposit the coins to create a masternode. Pay 5000 seraph exactly into this address. No more, no less.
 -·Wait for 15 confirmations of the transaction.
 6.In the Console Debug window enter masternode genkey and copy the result. This is your MASTERNODE PRIVKEY.
-7.Open Configuration File in Notepad. This config file is located at C:/users/***Your windows username***/appdata(hidden)/roaming/seraph.conf  Then paste in the following.
+7.Open Configuration File in Notepad. This config file is located at C:/users/***Your windows username***/appdata(hidden)/roaming/seraph/seraph.conf  Then paste in the following.
 
 rpcuser=ANYTHINGHERE
 rpcpassword=ANYTHINGHERE
@@ -19,7 +19,7 @@ masternodeprivkey=PRIVATEKEYREPLACETHIS
 
 
 8.Now save and close the config file. 
-9. Open Masternode.conf. This config file is located at C:/users/***Your windows username***/appdata(hidden)/roaming/masternode.conf  Then paste in the following.
+9. Open Masternode.conf. This config file is located at C:/users/***Your windows username***/appdata(hidden)/roaming/seraph/masternode.conf  Then paste in the following.
 
 mn1 YOURIP:25676 PRIVATEKEYREPLACETHIS INSERTYOURTXID 0
 
