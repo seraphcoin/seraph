@@ -38,7 +38,7 @@ git clone https://github.com/seraphcoin/seraph.git
 
 Now we are going to compile the Client:
 
-chmod a+x+w -R snx/
+chmod a+x+w -R seraph/
 cd seraph
 ./autogen.sh
 ./configure
@@ -53,7 +53,7 @@ press enter
 
 We need to create our masternode Private Key.
 
-snx-cli masternode genkey
+seraph-cli masternode genkey
 
 copy the generated code to a text file
 
