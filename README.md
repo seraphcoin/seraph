@@ -57,7 +57,7 @@ The next three steps are an example of how to acquire the source in an appropria
 
     cd /usr/src
     sudo git clone https://github.com/seraphcoin/seraph.git
-    sudo chmod -R a+rw seraph
+    sudo chmod -R a+r+w seraph
     
 Once the source code is ready the build steps are below.
 
