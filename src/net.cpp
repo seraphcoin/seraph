@@ -60,7 +60,7 @@ using namespace std;
 
 namespace
 {
-const int MAX_OUTBOUND_CONNECTIONS = 16;
+const int MAX_OUTBOUND_CONNECTIONS = 12; // Reduced to 12 connections. ( Manual edit to suit your needs)
 
 struct ListenSocket {
     SOCKET socket;
