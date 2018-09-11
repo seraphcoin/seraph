@@ -135,10 +135,7 @@ public:
         assert(hashGenesisBlock == uint256("0x000007e8828bcf3f1c0c5be279eb9565a6b2813e066dab69515326cc38380fb8"));
         assert(genesis.hashMerkleRoot == uint256("0x5721e13893e3b38b95fe2ad83a1cbc54c714f066ea6069ad5e220df783d6fbb9"));
 		
-	    vSeeds.push_back(CDNSSeedData("207.148.23.183", "207.148.23.183"));  // Seed node 1 : New York
-        vSeeds.push_back(CDNSSeedData("140.82.32.18", "140.82.32.18"));  // Seed node 2 : Germany
-		vSeeds.push_back(CDNSSeedData("207.148.94.219", "207.148.94.219"));  // Seed node 3 : Japan
-		vSeeds.push_back(CDNSSeedData("140.82.18.79", "140.82.18.79"));  // Seed node 4 : Los Angeles
+		//Removed Official Nodes, new ones will be added soon to restore the chain.
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 54); 
