@@ -181,17 +181,17 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0xb5;
-        pchMessageStart[1] = 0xd9;
-        pchMessageStart[2] = 0xf4;
+        pchMessageStart[0] = 0x51;
+        pchMessageStart[1] = 0xb3;
+        pchMessageStart[2] = 0xab;
         pchMessageStart[3] = 0xa0;
 
         vAlertPubKey = ParseHex("048ea26bc698946b3f4193aef683b6760bd132e309381425e651be31215bcfc2dad7f9146fb700c2d103e621fbc253169563af35c67b9258c4bd2f2a76cf1a1fa3");
         nDefaultPort = 43246;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 120; // 120 Seconds
-        nTargetSpacing = 5 * 120;  // 600 Seconds
-        nLastPOWBlock = 1000;
+        nTargetTimespan = 1 * 30; // 30 Seconds (reduced for testnet)
+        nTargetSpacing = 5 * 60;  // 60 Seconds
+        nLastPOWBlock = 1000000;  //increased to test PoW
         nMaturity = 15;
         nMaxMoneyOut = 33284220 * COIN; // 2050 Maximum
 
@@ -204,9 +204,7 @@ public:
         genesis.hashMerkleRoot == uint256("0x");
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("seraph.io", "test01.seraph.io"));
-        vSeeds.push_back(CDNSSeedData("seraph.io", "test02.seraph.io"));
-        vSeeds.push_back(CDNSSeedData("seraph.io", "test03.seraph.io"));
+	//removed testnet seeds. waiting for new addresses.
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Testnet seraph addresses start with 'T'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);  // Testnet seraph script addresses start with '5' or '6'
@@ -223,7 +221,7 @@ public:
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
-        fMineBlocksOnDemand = false;
+        fMineBlocksOnDemand = true;   //block on demand activated to facilitate tests
         fTestnetToBeDeprecatedFieldRPC = true;
         nPoolMaxTransactions = 2;
         strSporkKey = "04a72cdafbd514beba17787899e4f97346fcf96575cc74d545145f9056d09c39492d8ddf42971bd5a3ac03947d40d7470bc0b3000fab52ebb6ca2c509a404ce324";
