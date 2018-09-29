@@ -122,8 +122,6 @@ private:
     void buildParameterlist(QString arg);
     /** show detailed information on ui about selected node */
     void updateNodeDetail(const CNodeCombinedStats* stats);
-     /** clear the selected node */
-    void clearSelectedNode();
 
     enum ColumnWidths {
         ADDRESS_COLUMN_WIDTH = 170,
