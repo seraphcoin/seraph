@@ -1,9 +1,13 @@
+dnl Copyright (c) 2013-2016 The Bitcoin Core developers
+dnl Distributed under the MIT software license, see the accompanying
+dnl file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 dnl Helper for cases where a qt dependency is not met.
 dnl Output: If qt version is auto, set bitcoin_enable_qt to false. Else, exit.
 AC_DEFUN([BITCOIN_QT_FAIL],[
   if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
     if test x$bitcoin_enable_qt != xno; then
-      AC_MSG_WARN([$1; seraph-qt frontend will not be built])
+      AC_MSG_WARN([$1; dash-qt frontend will not be built])
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -50,7 +54,7 @@ AC_DEFUN([BITCOIN_QT_INIT],[
   dnl enable qt support
   AC_ARG_WITH([gui],
     [AS_HELP_STRING([--with-gui@<:@=no|qt4|qt5|auto@:>@],
-    [build seraph-qt GUI (default=auto, qt5 tried first)])],
+    [build dash-qt GUI (default=auto, qt5 tried first)])],
     [
      bitcoin_qt_want_version=$withval
      if test x$bitcoin_qt_want_version = xyes; then
@@ -110,7 +114,6 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
   CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
   if test x$bitcoin_qt_got_major_vers = x5; then
-    TEMP_CPPFLAGS="$TEMP_CPPFLAGS -DHAVE_QT5"
     _BITCOIN_QT_IS_STATIC
     if test x$bitcoin_cv_static_qt = xyes; then
       _BITCOIN_QT_FIND_STATIC_PLUGINS
@@ -203,6 +206,21 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
   BITCOIN_QT_PATH_PROGS([RCC], [rcc-qt${bitcoin_qt_got_major_vers} rcc${bitcoin_qt_got_major_vers} rcc], $qt_bin_path)
   BITCOIN_QT_PATH_PROGS([LRELEASE], [lrelease-qt${bitcoin_qt_got_major_vers} lrelease${bitcoin_qt_got_major_vers} lrelease], $qt_bin_path)
   BITCOIN_QT_PATH_PROGS([LUPDATE], [lupdate-qt${bitcoin_qt_got_major_vers} lupdate${bitcoin_qt_got_major_vers} lupdate],$qt_bin_path, yes)
+
+  BITCOIN_QT_CHECK([
+    AC_CACHE_CHECK([whether $RCC accepts --format-version option],
+                   [ac_cv_prog_rcc_accepts_format_version],
+                   [ac_cv_prog_rcc_accepts_format_version=no
+                    echo '<!DOCTYPE RCC><RCC version="1.0"/>' > conftest.qrc
+                    $RCC --format-version 1 conftest.qrc >/dev/null 2>&1 && ac_cv_prog_rcc_accepts_format_version=yes
+                    rm -f conftest.qrc])
+    if test "$ac_cv_prog_rcc_accepts_format_version" = yes; then
+      RCCFLAGS="--format-version 1"
+    else
+      RCCFLAGS=
+    fi
+    AC_SUBST(RCCFLAGS)
+  ])
 
   MOC_DEFS='-DHAVE_CONFIG_H -I$(srcdir)'
   case $host in
@@ -332,8 +350,9 @@ AC_DEFUN([_BITCOIN_QT_FIND_STATIC_PLUGINS],[
           QT_LIBS="$QT_LIBS -L$qt_plugin_path/accessible"
         fi
       fi
-     m4_ifdef([PKG_CHECK_MODULES],[
      if test x$use_pkgconfig = xyes; then
+     : dnl
+     m4_ifdef([PKG_CHECK_MODULES],[
        PKG_CHECK_MODULES([QTPLATFORM], [Qt5PlatformSupport], [QT_LIBS="$QTPLATFORM_LIBS $QT_LIBS"])
        if test x$TARGET_OS = xlinux; then
          PKG_CHECK_MODULES([X11XCB], [x11-xcb], [QT_LIBS="$X11XCB_LIBS $QT_LIBS"])
@@ -504,3 +523,4 @@ AC_DEFUN([_BITCOIN_QT_FIND_LIBS_WITHOUT_PKGCONFIG],[
   CXXFLAGS="$TEMP_CXXFLAGS"
   LIBS="$TEMP_LIBS"
 ])
+
