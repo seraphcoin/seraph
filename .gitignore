@@ -10,8 +10,6 @@ src/test/test_seraph_fuzzy
 src/qt/test/test_seraph-qt
 
 # autoreconf
-Makefile.in
-Makefile
 aclocal.m4
 autom4te.cache/
 build-aux/config.guess
@@ -74,13 +72,11 @@ src/qt/test/moc*.cpp
 
 # Compilation and Qt preprocessor part
 *.qm
-Makefile
 seraph-qt
 seraph-Qt.app
 background.tiff*
 
 # Unit-tests
-Makefile.test
 seraph-qt_test
 
 # Resources cpp
@@ -105,7 +101,6 @@ win32-build
 test/config.ini
 test/cache/*
 
-!src/leveldb*/Makefile
 
 /doc/doxygen/
 
